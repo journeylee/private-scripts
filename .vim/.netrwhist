@@ -1,0 +1,10 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/Users/journeylee/android-sdks/samples/android-15/AppNavigation'
+let g:netrw_dirhist_2='/Users/journeylee/Develop/android/packages/apps/Mms/res/values-zh-rCN'
+let g:netrw_dirhist_3='/Users/journeylee/Library/Rime'
+let g:netrw_dirhist_4='/Users/journeylee/Library/goagent-2.1.11'
+let g:netrw_dirhist_5='/Users/journeylee/Develop/thefirewallofios/theos'
+let g:netrw_dirhist_6='/Users/journeylee/Library/Application Support/com.apple.TCC'
+let g:netrw_dirhist_7='/Users/journeylee/Development/pactester'
+let g:netrw_dirhist_8='/Users/journeylee/.journeylee/.git/modules/vim-javascript'
