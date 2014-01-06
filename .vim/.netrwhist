@@ -1,6 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_cnt =5
 let g:netrw_dirhist_1='/Users/journeylee/Development/web/monarch/lib/Monarch/Db/Metadata/Source'
 let g:netrw_dirhist_2='/Users/journeylee/Development/web/zf2demo/vendor/ZF2/library/Zend/Memory'
 let g:netrw_dirhist_3='/Users/journeylee/Development/web/zf2demo/vendor/ZF2/library/Zend/Config'
 let g:netrw_dirhist_4='/Users/journeylee/Development/web/monarch/lib/Monarch/Config'
+let g:netrw_dirhist_5='/usr/local/var/www/webgrind/library'
