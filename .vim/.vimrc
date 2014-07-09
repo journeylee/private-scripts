@@ -106,6 +106,12 @@ set smartindent
 set cindent
 set autoindent
 set copyindent
-set background=dark
 
-colorscheme kolor
+set t_Co=256
+"colorscheme harlequin
+set background=dark
+colorscheme iceberg
+
+"let NERDTreeWinSize=21
+"autocmd VimEnter * NERDTree
+"autocmd VimEnter * wincmd p
