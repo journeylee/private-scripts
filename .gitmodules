@@ -1,18 +1,18 @@
-[submodule ".vim/bundle/vim-javascript"]
+[submodule "vim/bundle/vim-javascript"]
 	path = vim/bundle/vim-javascript
 	url = https://github.com/pangloss/vim-javascript.git
-[submodule ".vim/bundle/vim-javascript-syntax"]
+[submodule "vim/bundle/vim-javascript-syntax"]
 	path = vim/bundle/vim-javascript-syntax
 	url = https://github.com/jelera/vim-javascript-syntax
 [submodule "NERD"]
 	path = vim/bundle/vim-nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
-[submodule ".vim/bundle/seoul256.vim"]
+[submodule "vim/bundle/seoul256.vim"]
 	path = vim/bundle/seoul256.vim
 	url = https://github.com/junegunn/seoul256.vim.git
-[submodule ".vim/bundle/vim-colors-solarized"]
+[submodule "vim/bundle/vim-colors-solarized"]
 	path = vim/bundle/vim-colors-solarized
 	url = https://github.com/altercation/vim-colors-solarized.git
-[submodule ".vim/bundle/vim-iceberg"]
+[submodule "vim/bundle/vim-iceberg"]
 	path = vim/bundle/vim-iceberg
 	url = https://github.com/cocopon/iceberg.vim.git
