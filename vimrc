@@ -110,7 +110,7 @@ set copyindent
 set t_Co=256
 "colorscheme harlequin
 set background=dark
-colorscheme iceberg
+colorscheme kolor
 
 "let NERDTreeWinSize=21
 "autocmd VimEnter * NERDTree
