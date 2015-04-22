@@ -16,3 +16,6 @@
 [submodule "vim/bundle/vim-iceberg"]
 	path = vim/bundle/vim-iceberg
 	url = https://github.com/cocopon/iceberg.vim.git
+[submodule "vim/bundle/vim-go"]
+	path = vim/bundle/vim-go
+	url = https://github.com/fatih/vim-go.git
