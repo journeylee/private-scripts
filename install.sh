@@ -14,14 +14,32 @@ ln -snf ${rootd}/bashrc ${HOME}/.bashrc
 ln -snf ${rootd}/bash_profile ${HOME}/.bash_profile
 ln -snf ${rootd}/ohmyzsh/custom/themes ${HOME}/.oh-my-zsh/custom/
 
-temp=`mktemp -t jpsi` || (
-  echo "Error: cant make temp file." >&2
-  exit 2
-)
+case `uname -s` in
+  "Darwin" )
+    temp=`mktemp -t jpsi` || (
+      echo "Error: cant make temp file." >&2
+      exit 2
+    )
+    ;;
+  "Linux" )
+    temp=`mktemp -t jpsi.XXXXXX` || (
+      echo "Error: cant make temp file." >&2
+      exit 2
+    )
+    ;;
+  *)
+    echo "Error: unsupported OS, only OS X and Linux supported currently."
+    ;;
+esac
 
 sed -e 's@ZSH_THEME="[^"]\{1,\}"@ZSH_THEME="ys.custom"@g'  \
-    -e 's@plugins=([^)]\{1,\})@plugins=(git osx bundler brew encode64 redis-cli sudo tmux urltools web-search)@g' \
+    -e 's@plugins=([^)]\{1,\})@plugins=(git bundler encode64 jsontools redis-cli sudo tmux urltools web-search)@g' \
     ${HOME}/.zshrc > $temp
+
+if [[ `uname -s` == "Darwin" ]]
+then
+  echo "plugins+=(osx brew)" >> $temp
+fi
 
 cat >> $temp <<EOF
 export HOMEBREW_GITHUB_API_TOKEN="f1b82f8b4605730becfb6eaf27837ffeb6887f82"
