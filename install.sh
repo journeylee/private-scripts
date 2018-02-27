@@ -3,12 +3,14 @@
 rootd=${HOME}/.${USERNAME}
 cwd=${PWD}
 
-#if [ -d $rootd ]
-#then
-#  cd $rootd
-#  echo "update install env..."
-#  git pull -r
-#fi
+if [ -d $rootd ]
+then
+  cd $rootd
+  echo "update install env..."
+  git pull -r
+else
+  git clone https://github.com/journeylee/private-scripts.git
+fi
 
 if [ ! -d "${HOME}/.oh-my-zsh" ]
 then
