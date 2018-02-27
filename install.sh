@@ -1,15 +1,16 @@
 #!/bin/bash
 
-rootd=${HOME}/.${USERNAME}
+rootd=${HOME}/.${USER}
 cwd=${PWD}
 
+set -x
 if [ -d $rootd ]
 then
   cd $rootd
   echo "update install env..."
   git pull -r
 else
-  git clone https://github.com/journeylee/private-scripts.git
+  git clone https://github.com/journeylee/private-scripts.git $rootd
 fi
 
 if [ ! -d "${HOME}/.oh-my-zsh" ]
@@ -60,4 +61,5 @@ EOF
 
 mv -f $temp ${HOME}/.zshrc
 
+vim +PlugInstall +qall
 env zsh
