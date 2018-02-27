@@ -39,9 +39,40 @@ then
     | sed -e '/env zsh/d')"
 fi
 
+function backup {
+
+  # Use colors, but only if connected to a terminal, and that terminal
+  # supports them.
+  if which tput >/dev/null 2>&1; then
+    ncolors=$(tput colors)
+  fi
+  if [ -t 1 ] && [ -n "$ncolors" ] && [ "$ncolors" -ge 8 ]; then
+    RED="$(tput setaf 1)"
+    GREEN="$(tput setaf 2)"
+    YELLOW="$(tput setaf 3)"
+    BLUE="$(tput setaf 4)"
+    BOLD="$(tput bold)"
+    NORMAL="$(tput sgr0)"
+  else
+    RED=""
+    GREEN=""
+    YELLOW=""
+    BLUE=""
+    BOLD=""
+    NORMAL=""
+  fi
+  [ "x$1" != "x" ] && [ -e $1 ] && \
+    printf "${BOLD}${YELLOW}$1${NORMAL} exists, backup to ${YELLOW}${BOLD}$1.bak.`date +%Y-%m-%dT%H.%M.%S`${NORMAL}...\n" && \
+    mv $1 $1.bak.`date +%Y-%m-%dT%H.%M.%S`
+}
+
+backup ${HOME}/.vimrc
 ln -snf ${rootd}/vimrc ${HOME}/.vimrc
+backup ${HOME}/.vim
 ln -snf ${rootd}/vim ${HOME}/.vim
+backup ${HOME}/.bashrc
 ln -snf ${rootd}/bashrc ${HOME}/.bashrc
+backup ${HOME}/.bash_profile
 ln -snf ${rootd}/bash_profile ${HOME}/.bash_profile
 ln -snf ${rootd}/ohmyzsh/custom/themes ${HOME}/.oh-my-zsh/custom/
 
@@ -83,4 +114,4 @@ mv -f $temp ${HOME}/.zshrc
 
 vim +PlugInstall +qall
 
-printf "${BLUE} Please restart your shell or manually execute /bin/zsh to change shell!${NORMAL}"
+printf "${BLUE} Please restart your shell or manually execute /bin/zsh to change shell!${NORMAL}\n"
