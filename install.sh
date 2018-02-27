@@ -3,7 +3,6 @@
 rootd=${HOME}/.${USER}
 cwd=${PWD}
 
-set -x
 if [ -d $rootd ]
 then
   cd $rootd
@@ -61,5 +60,5 @@ EOF
 
 mv -f $temp ${HOME}/.zshrc
 
-vim +PlugInstall +qall
 env zsh
+vim +PlugInstall +qall
