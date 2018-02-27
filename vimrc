@@ -46,7 +46,6 @@ if has('mouse')
   set mouse=a
 endif
 
-execute pathogen#infect()
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
 if &t_Co > 2 || has("gui_running")
@@ -110,8 +109,29 @@ set copyindent
 set t_Co=256
 "colorscheme harlequin
 set background=dark
-colorscheme kolor
 
 "let NERDTreeWinSize=21
 "autocmd VimEnter * NERDTree
 "autocmd VimEnter * wincmd p
+
+
+" Specify a directory for plugins
+" - For Neovim: ~/.local/share/nvim/plugged
+" - Avoid using standard Vim directory names like 'plugin'
+call plug#begin('~/.vim/plugged')
+
+Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf.vim'
+Plug 'altercation/vim-colors-solarized'
+Plug 'fatih/vim-go'
+Plug 'SirVer/ultisnips'
+Plug 'mxw/vim-jsx'
+Plug 'pangloss/vim-javascript'
+
+" Initialize plugin system
+call plug#end()
+
+" solarized colorscheme settings
+let g:solarized_termcolors=256
+let g:solarized_termtrans=1
+colorscheme solarized

@@ -1,6 +1,14 @@
 #!/bin/bash
 
-rootd=${HOME}/.journeylee
+rootd=${HOME}/.${USERNAME}
+cwd=${PWD}
+
+#if [ -d $rootd ]
+#then
+#  cd $rootd
+#  echo "update install env..."
+#  git pull -r
+#fi
 
 if [ ! -d "${HOME}/.oh-my-zsh" ]
 then
